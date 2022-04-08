@@ -40,37 +40,6 @@ All assets are stored in the `assets` directory. This contains all art and `.jso
 
 All SOurce files are within the `src` directory. `src` contains the files responsible for the generation, drawing and utils of the API.
 
-# Dungeon-Cards / The Land of Zenethia
-
-A RPG based Character generator with stats, general information, weapons, abilities and with a 32x32 pixel sprite portrait.
-
-## Lore
-
-### Pre-Pre Lore
-
-Before the War:
-
-### Pre Lore
-
-The War:
-
-### Current Lore
-
-After the War:
-
-## Lands
-
-There are 3 main Isles, consisting of 2 Upper Isles and the Lower Isle.
-
-### Upper Isles:
-
-North West Isle: Zenaria or Xanaria
-North East Isle: Zenethia or Xanethia
-
-### Lower Isle:
-
-South Isle: Zarkus
-
 # Ideas and Thoughts for the Project
 
 ## To Do List/ Features to implement:
@@ -114,3 +83,34 @@ South Isle: Zarkus
   enemy placements and loot chest placed at the end.
 
 - Community hub area
+
+# Character Lore / The Land of Zenethia Lore
+
+A RPG based Character generator with stats, general information, weapons, abilities and with a 32x32 pixel sprite portrait.
+
+## Lore
+
+### Pre-Pre Lore
+
+Before the War:
+
+### Pre Lore
+
+The War:
+
+### Current Lore
+
+After the War:
+
+## Lands
+
+There are 3 main Isles, consisting of 2 Upper Isles and the Lower Isle.
+
+### Upper Isles:
+
+North West Isle: Zenaria or Xanaria
+North East Isle: Zenethia or Xanethia
+
+### Lower Isle:
+
+South Isle: Zarkus
