@@ -1,0 +1,58 @@
+[
+    {
+        "ability": "Healing Aura",
+        "abilityRoll": "d4",
+        "duration": 0,
+        "desription": "An aura eminates from the caster, healing all friendly targets within range."
+    },
+    {
+        "ability": "Cure Effects",
+        "abilityRoll": "d4",
+        "duration": 0,
+        "desription": "A wave of energy releases from the caster, curing all status effects from friendly targets within range."
+    },
+    {
+        "ability": "Vine Trap",
+        "abilityRoll": "d4",
+        "duration": 2,
+        "desription": "Vines grow from nearby surfaces, and grapple the target locking them in place."
+    },
+    {
+        "ability": "Rage", 
+        "abilityRoll": "d6",
+        "duration": 3,
+        "desription": "The caster unleashes a fit of rage, causing their attacks to do extra damage."
+    },
+    {
+        "ability": "Cloak",
+        "abilityRoll": "d12",
+        "duration": 2,
+        "desription": "The caster vanishes and become invisible from all targets."
+    },
+    {
+        "ability": "Summon Undead",
+        "abilityRoll": "d12",
+        "duration": 2,
+        "desription": "An undead entity rasies from the ground to fight for/under the command of the caster."
+    },
+    {
+        "ability": "Summon Beast",
+        "abilityRoll": "d12",
+        "duration": 2,
+        "desription": "A beast spirit entity appears to fight for/under the command of the caster."
+    },
+    {
+        "ability": "Haste",
+        "abilityRoll": "d4",
+        "duration": 3,
+        "desription": "A wave of energy virbrates around the caster, and the casters movement speed is increased. This also makes the caster harder to hit."
+    },
+
+
+
+    {
+        "ability": "Power Shot",
+        "abilityRoll": "d12",
+        "desription": ""
+    }
+]
