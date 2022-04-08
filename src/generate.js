@@ -94,11 +94,17 @@ const generateRandom = async (seed) => {
     hp: utils.getHP(classVal, con, lastRand),
     ac: ac,
     str: utils.rollStat(lastRand),
+    strModifier: "",
     dex: utils.rollStat(lastRand),
+    dexModifier: "",
     con: con,
+    conModifier: "",
     int: utils.rollStat(lastRand),
+    intModifier: "",
     wis: utils.rollStat(lastRand),
+    wisModifier: "",
     cha: utils.rollStat(lastRand),
+    chaModifier: "",
     statModifier: statMod,
     statModifierValue: statModVal,
     coins: Math.floor(utils.getRand(lastRand, 0, 1000)),
@@ -115,15 +121,22 @@ const generateRandom = async (seed) => {
     seed: seed,
   };
 
+  characterData.strModifier = utils.getAbilityModifier(characterData.str);
+  characterData.dexModifier = utils.getAbilityModifier(characterData.dex);
+  characterData.conModifier = utils.getAbilityModifier(characterData.con);
+  characterData.intModifier = utils.getAbilityModifier(characterData.int);
+  characterData.wisModifier = utils.getAbilityModifier(characterData.wis);
+  characterData.chaModifier = utils.getAbilityModifier(characterData.cha);
+
   characterData.description = utils.getBackgroundStory(lastRand, characterData);
 
   const image_URL = await draw.getTokenURL(1, characterData);
   characterData.image_url = image_URL;
 
-  const sprite_URL = await draw.getSpriteURL(15, characterData);
+  const sprite_URL = await draw.getSpriteURL(1, characterData);
   characterData.sprite_url = sprite_URL;
 
-  const weapon_URL = await draw.getWeaponURL(15, characterData);
+  const weapon_URL = await draw.getWeaponURL(1, characterData);
   characterData.weapon_url = weapon_URL;
 
   return characterData;
@@ -169,11 +182,17 @@ const generateCharacter = async (id) => {
     hp: character.hp,
     ac: ac,
     str: character.str,
+    strModifier: utils.getAbilityModifier(character.str),
     dex: character.dex,
+    dexModifier: utils.getAbilityModifier(character.dex),
     con: character.con,
+    conModifier: utils.getAbilityModifier(character.con),
     int: character.int,
+    intModifier: utils.getAbilityModifier(character.int),
     wis: character.wis,
+    wisModifier: utils.getAbilityModifier(character.wis),
     cha: character.cha,
+    chaModifier: utils.getAbilityModifier(character.cha),
     statModifier: character.statModifier,
     statModifierValue: character.statModifierValue,
     coins: character.coins,
@@ -195,10 +214,10 @@ const generateCharacter = async (id) => {
   const image_URL = await draw.getTokenURL(1, characterData);
   characterData.image_url = image_URL;
 
-  const sprite_URL = await draw.getSpriteURL(15, characterData);
+  const sprite_URL = await draw.getSpriteURL(1, characterData);
   characterData.sprite_url = sprite_URL;
 
-  const weapon_URL = await draw.getWeaponURL(15, characterData);
+  const weapon_URL = await draw.getWeaponURL(1, characterData);
   characterData.weapon_url = weapon_URL;
 
   return characterData;

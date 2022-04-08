@@ -1,50 +1,12 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dungeon Cards Viewer</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"
-      integrity="sha512-5erpERW8MxcHDF7Xea9eBQPiRtxbse70pFcaHJuOhdEBQeAxGQjUwgJbuBDWve+xP/u5IoJbKjyJk50qCnMD7A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <style>
-      body {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: center;
-        background: #f8f8f8;
-      }
-      body > div {
-        position: relative;
-        display: inline-block;
-        margin: 12px;
-      }
-      body > div > img {
-        display: block;
-        width: 428px;
-        height: 300px;
-        image-rendering: pixelated;
-        background: #eee;
-        object-fit: contain;
-      }
-    </style>
-    <script>
-      $(document).ready(async () => {
-        const web3 = new Web3(window.ethereum);
-        for (let i = 0; i < 100; i++) {
-          const seed = web3.utils.sha3(Math.random().toString()).slice(-2);
-          $('body').append(
-            $(
-              `<div><img src='http://dungeoncards.us-east-2.elasticbeanstalk.com/seed/${seed}/1x.png' /></div>`
-            )
-          );
-        }
-      });
-    </script>
-  </head>
-  <body></body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>API Root</p>
+</body>
 </html>

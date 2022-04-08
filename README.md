@@ -39,3 +39,78 @@ All assets are stored in the `assets` directory. This contains all art and `.jso
 ## Source Files
 
 All SOurce files are within the `src` directory. `src` contains the files responsible for the generation, drawing and utils of the API.
+
+# Dungeon-Cards / The Land of Zenethia
+
+A RPG based Character generator with stats, general information, weapons, abilities and with a 32x32 pixel sprite portrait.
+
+## Lore
+
+### Pre-Pre Lore
+
+Before the War:
+
+### Pre Lore
+
+The War:
+
+### Current Lore
+
+After the War:
+
+## Lands
+
+There are 3 main Isles, consisting of 2 Upper Isles and the Lower Isle.
+
+### Upper Isles:
+
+North West Isle: Zenaria or Xanaria
+North East Isle: Zenethia or Xanethia
+
+### Lower Isle:
+
+South Isle: Zarkus
+
+# Ideas and Thoughts for the Project
+
+## To Do List/ Features to implement:
+
+- Finish all assets for characters.
+- Assign a random general abilities for each character.
+- Assign a random ability to each weapon.
+
+## Completed Features:
+
+- Random Character Stats.
+- Random Character General Information.
+- First Names Based on Sex.
+- Random Pixel Weapon Generation.
+- Weapons based on class.
+- Weapon information outlined with bronze,
+  silver, gold, purple, based on rarity.
+- Card is given a rarity trim determined
+  by the characters stats.
+- Random Pixel Character Generation.
+- Random Character Names.
+- Random weapon modifier.
+- Random Armor pieces (Head, Chest, Legs) which gives random armor class (AC).
+- Randomisied Abilities (maybe acility stats random).(Removed)
+- Canvas image can be scaled by adding a scale
+  to the url (/[scale]x.png).
+- JSON file reader for
+  all random content.
+- Characters are saved and written to
+  characters.json for later use.
+
+## Elemental Table (Maybe?)
+
+- Fire > Earth
+- Fire < Water
+- Fire
+
+## Game Idea
+
+- Randomly genegated tilsets placed together with random
+  enemy placements and loot chest placed at the end.
+
+- Community hub area

@@ -1,9 +1,9 @@
 // Node Module Imports
 require("dotenv").config();
 const Web3 = require("web3");
-const https = require("https");
+// const https = require("https");
 const express = require("express");
-const fs = require("fs");
+// const fs = require("fs");
 const path = require("path");
 const { registerFont } = require("canvas");
 registerFont(__dirname + "/assets/Press_Start_2P/PressStart2P-Regular.ttf", {
@@ -11,10 +11,10 @@ registerFont(__dirname + "/assets/Press_Start_2P/PressStart2P-Regular.ttf", {
 });
 
 // SSL Enable
-const options = {
-  key: fs.readFileSync("./security/RPG-Character-Generator-API"),
-  cert: fs.readFileSync(KEY_PATH),
-};
+// const options = {
+//   key: fs.readFileSync("./security/RPG-Character-Generator-API"),
+//   cert: fs.readFileSync(KEY_PATH),
+// };
 
 // Code File Imports
 const generator = require("./src/generate");
@@ -273,6 +273,6 @@ app.get(
 );
 
 // Server Listen
-https.createServer(options, app).listen(port, () => {
-  console.log(`dungeoncards-api is listening on port ${port}`);
+app.listen(port, () => {
+  console.log(`API is listening on port ${port}`);
 });

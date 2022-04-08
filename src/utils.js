@@ -180,6 +180,45 @@ const getBackgroundColor = (character) => {
   }
 };
 
+const getAbilityModifier = (abilityScore) => {
+  const value = abilityScore; // Math.floor((abilityScore - 10) / 2)
+  switch (true) {
+    case value === 1:
+      return "-5";
+    case value <= 3:
+      return "-4";
+    case value <= 5:
+      return "-3";
+    case value <= 7:
+      return "-2";
+    case value <= 9:
+      return "-1";
+    case value <= 11:
+      return "+0";
+    case value <= 13:
+      return "+1";
+    case value <= 15:
+      return "+2";
+    case value <= 17:
+      return "+3";
+    case value <= 19:
+      return "+4";
+    case value <= 21:
+      return "+5";
+    case value <= 23:
+      return "+6";
+    case value <= 25:
+      return "+7";
+    case value <= 27:
+      return "+8";
+    case value <= 29:
+      return "+9";
+    case value === 30:
+      return "+10";
+  }
+  return "no value";
+};
+
 // Character Backstory/ History Generator
 const getBackgroundStory = (seed, character) => {
   let pronouns = getPronouns(character);
@@ -256,71 +295,18 @@ const getBackgroundStory = (seed, character) => {
     `${character.name} had several friends, and ${pronouns[1]} childhood was generally a happy one.`,
     `${character.name} always found it easy to make friends, and ${pronouns[0]} loved being around people.`,
     `Everyone knew who ${pronouns[0]} was, and ${pronouns[0]} had friends everywhere ${pronouns[0]} went.`,
-
-    character.name +
-      " was exiled from others as a child for being strange. Other kids found " +
-      pronouns[2] +
-      " scary.",
-
-    "Growing up " +
-      pronouns[0] +
-      " often went hunting and foraging and was taught essential survival skills.",
-    character.name +
-      " was taught smithing at a young age as " +
-      pronouns[0] +
-      " often worked and helped out at " +
-      pronouns[1] +
-      " local smithery.",
-
-    character.name +
-      " would often fish as a child and became quite good at it. In fact " +
-      pronouns[0] +
-      " was crowned the champion in a fishing tournament at the age of 13.",
-    character.name +
-      " grew up with the ambition of being a powerful wizard, hoping " +
-      pronouns[0] +
-      " could become more powerful than the rest of " +
-      pronouns[1] +
-      " peers.",
-
-    character.name +
-      " was proficient at card tricks and wished to learn real magic in order to improve " +
-      pronouns[1] +
-      ' "magic" acts.',
-
-    character.name +
-      " learned the dark arts of thievery when " +
-      pronouns[0] +
-      " was young, as it allowed " +
-      pronouns[2] +
-      " to earn money from pickpocketing the other locals.",
-
-    character.name +
-      " holds the record for most lobsters caught in 24 hours using a single net. The record being 200 lobsters caught in 24 hours.",
-
-    character.name +
-      " travelled in a caravan for a few months in " +
-      pronouns[1] +
-      " early teenage years. During this period he learned to play mutliple musical intruments.",
-
-    character.name +
-      " spent most of " +
-      pronouns[1] +
-      " teenage years flirting and wooing many people. Locals would pay " +
-      pronouns[2] +
-      " to teach them how to do the same.",
-
-    character.name +
-      " would spend week nights playing " +
-      pronouns[1] +
-      " lute at the local tavern in return for food and a room to stay in.",
-
-    character.name +
-      " is a lone wolf and has been since " +
-      pronouns[0] +
-      " was a child. " +
-      character.name +
-      " never tried to make friends and often explored the island alone.",
+    `${character.name} was exiled from others as a child for being strange. Other kids found ${pronouns[2]} scary.`,
+    `Growing up ${pronouns[0]} often went hunting and foraging and was taught essential survival skills.`,
+    `${character.name} was taught smithing at a young age as ${pronouns[0]} often worked and helped out at ${pronouns[1]} local smithery.`,
+    `${character.name} would often fish as a child and became quite good at it. In fact ${pronouns[0]} was crowned the champion in a fishing tournament at the age of 13.`,
+    `${character.name} grew up with the ambition of being a powerful wizard, hoping ${pronouns[0]} could become more powerful than the rest of ${pronouns[1]} peers.`,
+    `${character.name} was proficient at card tricks and wished to learn real magic in order to improve ${pronouns[1]} "magic" acts.`,
+    `${character.name} learned the dark arts of thievery when ${pronouns[0]} was young, as it allowed ${pronouns[2]} to earn money from pickpocketing the other locals.`,
+    `${character.name} holds the record for most lobsters caught in 24 hours using a single net. The record being 200 lobsters caught in 24 hours.`,
+    `${character.name} travelled in a caravan for a few months in ${pronouns[1]} early teenage years. During this period he learned to play mutliple musical intruments.`,
+    `${character.name} spent most of ${pronouns[1]} teenage years flirting and wooing many people. Locals would pay ${pronouns[2]} to teach them how to do the same.`,
+    `${character.name} would spend week nights playing ${pronouns[1]} lute at the local tavern in return for food and a room to stay in.`,
+    `${character.name} is a lone wolf and has been since ${pronouns[0]} was a child. ${character.name} never tried to make friends and often explored the island alone.`,
   ];
 
   // Name
@@ -342,48 +328,26 @@ const getBackgroundStory = (seed, character) => {
   story += birthplace[Math.floor(getRand(seed, 0, birthplace.length))];
 
   // Parents
-  story +=
-    "and rasied " + rasiedBy[Math.floor(getRand(seed, 0, rasiedBy.length))];
+  story += `and rasied ${
+    rasiedBy[Math.floor(getRand(seed, 0, rasiedBy.length))]
+  }`;
 
   // Belongs to which Isle
-  story +=
-    character.name +
-    " lives in " +
-    Isles[Math.floor(getRand(seed, 0, Isles.length))] +
-    ", ";
+  story += `${character.name} lives in ${
+    Isles[Math.floor(getRand(seed, 0, Isles.length))]
+  }, `;
 
   // Background
   if (character.background.background == "Outlaw") {
-    story +=
-      "where " +
-      pronouns[0] +
-      " lives out " +
-      pronouns[1] +
-      " days as an " +
-      character.background.background +
-      ".";
+    story += `where ${pronouns[0]} lives out ${pronouns[1]} days as an ${character.background.background}.`;
   } else if (character.background.background == "Royalty") {
-    story +=
-      "where " +
-      pronouns[0] +
-      " lives out " +
-      pronouns[1] +
-      " days as " +
-      character.background.background +
-      ".";
+    story += `where ${pronouns[0]} lives out ${pronouns[1]} days as ${character.background.background}.`;
   } else {
-    story +=
-      "where " +
-      pronouns[0] +
-      " lives out " +
-      pronouns[1] +
-      " days as a " +
-      character.background.background +
-      ".";
+    story += `where ${pronouns[0]} lives out ${pronouns[1]} days as a ${character.background.background}.`;
   }
 
   // Memories
-  story += " " + memories[Math.floor(getRand(seed, 0, memories.length))];
+  story += ` ${memories[Math.floor(getRand(seed, 0, memories.length))]}`;
 
   return story;
 };
@@ -417,4 +381,5 @@ module.exports = {
   toFeet,
   getBackgroundColor,
   getBackgroundStory,
+  getAbilityModifier,
 };
