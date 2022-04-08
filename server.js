@@ -78,7 +78,7 @@ app.use("/", express.static(__dirname + "/assets/"));
 
 // Home URL
 app.get(`/`, (req, res) => {
-  res.sendFile(path.join(__dirname, "/index.html"));
+  res.sendFile(path.join(__dirname, "/README.md"));
 });
 
 // Get Character by ID
