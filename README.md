@@ -2,16 +2,16 @@
 
 ## Usefull links
 
-[Pre-generated Characters Card](http://localhost:3030/0/1x.png)
-[Pre-generated Characters Metadata](http://localhost:3030/0/metadata)
-[Seeded Characters Card](http://localhost:3030/seed/0/1x.png)
-[Seeded Characters Metadata](http://localhost:3030/seed/0/metadata)
+[Pre-generated Characters Card](https://character-generation-api.herokuapp.com/0/1x.png)
+[Pre-generated Characters Metadata](https://character-generation-api.herokuapp.com/0/metadata)
+[Seeded Characters Card](https://character-generation-api.herokuapp.com/seed/0/1x.png)
+[Seeded Characters Metadata](https://character-generation-api.herokuapp.com/seed/0/metadata)
 
-[Pre-generated Characters Sprite](http://localhost:3030/sprite/0/1x.png)
-[Seeded Characters Sprite](http://localhost:3030/sprite/0/1x.png)
+[Pre-generated Characters Sprite](https://character-generation-api.herokuapp.com/sprite/0/1x.png)
+[Seeded Characters Sprite](https://character-generation-api.herokuapp.com/sprite/0/1x.png)
 
-[Pre-generated Characters Weapon Sprite](http://localhost:3030/weapon/0/1x.png)
-[Seeded Characters Weapon Sprite](http://localhost:3030/sprite/weapon/1x.png)
+[Pre-generated Characters Weapon Sprite](https://character-generation-api.herokuapp.com/weapon/0/1x.png)
+[Seeded Characters Weapon Sprite](https://character-generation-api.herokuapp.com/sprite/weapon/1x.png)
 
 ## Setup
 
