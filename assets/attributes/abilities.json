@@ -47,6 +47,12 @@
         "duration": 3,
         "desription": "A wave of energy virbrates around the caster, and the casters movement speed is increased. This also makes the caster harder to hit."
     },
+    {
+        "ability": "Charged Attack",
+        "abilityRoll": "d4",
+        "duration": 3,
+        "desription": "A wave of energy virbrates around the caster, and the casters movement speed is increased. This also makes the caster harder to hit."
+    },
 
 
 
