@@ -42,55 +42,55 @@
 .task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
 </style>
         
-        
-        
     </head>
     <body class="vscode-body vscode-light">
         <h1 id="api-instructions">API Instructions</h1>
-<h2 id="usefull-links">Usefull links</h2>
+<h2 id="useful-links">Useful links</h2>
+<p>In order to change the seed for the characters, change the 0 in the URL address this is the seed value that is used in the API.</p>
+<!--
+- [Pre-generated Characters Card](https://character-generation-api.herokuapp.com/0/1x.png)
+- [Pre-generated Characters Metadata](https://character-generation-api.herokuapp.com/0/metadata)
+-->
 <ul>
-<li>
-<p><a href="https://character-generation-api.herokuapp.com/0/1x.png">Pre-generated Characters Card</a></p>
-</li>
-<li>
-<p><a href="https://character-generation-api.herokuapp.com/0/metadata">Pre-generated Characters Metadata</a></p>
-</li>
-<li>
-<p><a href="https://character-generation-api.herokuapp.com/seed/0/1x.png">Seeded Characters Card</a></p>
-</li>
-<li>
-<p><a href="https://character-generation-api.herokuapp.com/seed/0/metadata">Seeded Characters Metadata</a></p>
-</li>
-<li>
-<p><a href="https://character-generation-api.herokuapp.com/sprite/0/1x.png">Pre-generated Characters Sprite</a></p>
-</li>
-<li>
-<p><a href="https://character-generation-api.herokuapp.com/sprite/0/1x.png">Seeded Characters Sprite</a></p>
-</li>
-<li>
-<p><a href="https://character-generation-api.herokuapp.com/weapon/0/1x.png">Pre-generated Characters Weapon Sprite</a></p>
-</li>
-<li>
-<p><a href="https://character-generation-api.herokuapp.com/sprite/weapon/1x.png">Seeded Characters Weapon Sprite</a></p>
-</li>
+<li><a href="https://character-generation-api.herokuapp.com/seed/0/1x.png">Seeded Characters Card</a></li>
+<li><a href="https://character-generation-api.herokuapp.com/seed/0/metadata">Seeded Characters Metadata</a></li>
 </ul>
-<h2 id="setup">Setup</h2>
-<p>Run <code>npm init</code> inside the <code>api</code> directory to install all dependencies for the API.</p>
-<p>In Order for this to work. You must create an environment file <code>.env</code> and
-assign values to These variables inside there:</p>
-<pre><code><code><div>INFURA_NETWORK=&quot;&quot;
-INFURA_API_KEY=&quot;&quot;
-DGC_ADDRESS=&quot;&quot;
+<!-- - [Pre-generated Characters Sprite](https://character-generation-api.herokuapp.com/sprite/0/1x.png) -->
+<ul>
+<li><a href="https://character-generation-api.herokuapp.com/sprite/0/1x.png">Seeded Characters Sprite</a></li>
+</ul>
+<!-- - [Pre-generated Characters Weapon Sprite](https://character-generation-api.herokuapp.com/weapon/0/1x.png) -->
+<ul>
+<li><a href="https://character-generation-api.herokuapp.com/sprite/weapon/1x.png">Seeded Characters Weapon Sprite</a></li>
+</ul>
+<!--
+## Setup
+
+Run `npm init` inside the `api` directory to install all dependencies for the API.
+
+In Order for this to work. You must create an environment file `.env` and
+assign values to These variables inside there:
+
+```
+INFURA_NETWORK=""
+INFURA_API_KEY=""
+DGC_ADDRESS=""
 PORT=
-</div></code></code></pre>
-<p><code>INFURA_NETWORK</code> being the network you wish to access from (rinkeby, mainet, etc).<br>
-<code>INFURA_API_KEY</code> being your API key from Infura.<br>
-<code>DGC_ADDRESS</code> being the address of the contract.<br>
-<code>PORT</code> being the port you wihs the API to open on.</p>
-<h2 id="assets">Assets</h2>
-<p>All assets are stored in the <code>assets</code> directory. This contains all art and <code>.json</code> files containing information about the assets.</p>
-<h2 id="source-files">Source Files</h2>
-<p>All SOurce files are within the <code>src</code> directory. <code>src</code> contains the files responsible for the generation, drawing and utils of the API.</p>
+```
+
+`INFURA_NETWORK` being the network you wish to access from (rinkeby, mainet, etc).
+`INFURA_API_KEY` being your API key from Infura.
+`DGC_ADDRESS` being the address of the contract.
+`PORT` being the port you want the API to open on.
+
+## Assets
+
+All assets are stored in the `assets` directory. This contains all art and `.json` files containing information about the assets.
+
+## Source Files
+
+All SOurce files are within the `src` directory. `src` contains the files responsible for the generation, drawing and utils of the API.
+-->
 <h1 id="ideas-and-thoughts-for-the-project">Ideas and Thoughts for the Project</h1>
 <h2 id="to-do-list-features-to-implement">To Do List/ Features to implement:</h2>
 <ul>
@@ -121,38 +121,53 @@ all random content.</li>
 <li>Characters are saved and written to
 characters.json for later use.</li>
 </ul>
-<h2 id="elemental-table-maybe">Elemental Table (Maybe?)</h2>
-<ul>
-<li>Fire &gt; Earth</li>
-<li>Fire &lt; Water</li>
-<li>Fire</li>
-</ul>
-<h2 id="game-idea">Game Idea</h2>
-<ul>
-<li>
-<p>Randomly genegated tilsets placed together with random
-enemy placements and loot chest placed at the end.</p>
-</li>
-<li>
-<p>Community hub area</p>
-</li>
-</ul>
-<h1 id="character-lore--the-land-of-zenethia-lore">Character Lore / The Land of Zenethia Lore</h1>
-<p>A RPG based Character generator with stats, general information, weapons, abilities and with a 32x32 pixel sprite portrait.</p>
-<h2 id="lore">Lore</h2>
-<h3 id="pre-pre-lore">Pre-Pre Lore</h3>
-<p>Before the War:</p>
-<h3 id="pre-lore">Pre Lore</h3>
-<p>The War:</p>
-<h3 id="current-lore">Current Lore</h3>
-<p>After the War:</p>
-<h2 id="lands">Lands</h2>
-<p>There are 3 main Isles, consisting of 2 Upper Isles and the Lower Isle.</p>
-<h3 id="upper-isles">Upper Isles:</h3>
-<p>North West Isle: Zenaria or Xanaria
-North East Isle: Zenethia or Xanethia</p>
-<h3 id="lower-isle">Lower Isle:</h3>
-<p>South Isle: Zarkus</p>
+<!--
+## Elemental Table (Maybe?)
 
+- Fire > Earth
+- Fire < Water
+- Fire
+
+## Game Idea
+
+- Randomly genegated tilsets placed together with random
+  enemy placements and loot chest placed at the end.
+
+- Community hub area
+
+# Character Lore / The Land of Zenethia Lore
+
+A RPG based Character generator with stats, general information, weapons, abilities and with a 32x32 pixel sprite portrait.
+
+## Lore
+
+### Pre-Pre Lore
+
+Before the War:
+
+### Pre Lore
+
+The War:
+
+### Current Lore
+
+After the War:
+
+## Lands
+
+There are 3 main Isles, consisting of 2 Upper Isles and the Lower Isle.
+
+### Upper Isles:
+
+North West Isle: Zenaria or Xanaria
+North East Isle: Zenethia or Xanethia
+
+### Lower Isle:
+
+South Isle: Zarkus
+-->
+
+        
+        
     </body>
     </html>

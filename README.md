@@ -1,20 +1,26 @@
 # API Instructions
 
-## Usefull links
+## Useful links
 
+In order to change the seed for the characters, change the 0 in the URL address this is the seed value that is used in the API.
+
+<!--
 - [Pre-generated Characters Card](https://character-generation-api.herokuapp.com/0/1x.png)
 - [Pre-generated Characters Metadata](https://character-generation-api.herokuapp.com/0/metadata)
+-->
+
 - [Seeded Characters Card](https://character-generation-api.herokuapp.com/seed/0/1x.png)
-- [Seeded Characters Metadata](https://character-generation-api.herokuapp.com/seed/0/metadata)   
+- [Seeded Characters Metadata](https://character-generation-api.herokuapp.com/seed/0/metadata)
 
+<!-- - [Pre-generated Characters Sprite](https://character-generation-api.herokuapp.com/sprite/0/1x.png) -->
 
-- [Pre-generated Characters Sprite](https://character-generation-api.herokuapp.com/sprite/0/1x.png)
-- [Seeded Characters Sprite](https://character-generation-api.herokuapp.com/sprite/0/1x.png)   
+- [Seeded Characters Sprite](https://character-generation-api.herokuapp.com/sprite/0/1x.png)
 
+<!-- - [Pre-generated Characters Weapon Sprite](https://character-generation-api.herokuapp.com/weapon/0/1x.png) -->
 
-- [Pre-generated Characters Weapon Sprite](https://character-generation-api.herokuapp.com/weapon/0/1x.png)
-- [Seeded Characters Weapon Sprite](https://character-generation-api.herokuapp.com/sprite/weapon/1x.png)   
+- [Seeded Characters Weapon Sprite](https://character-generation-api.herokuapp.com/sprite/weapon/1x.png)
 
+<!--
 ## Setup
 
 Run `npm init` inside the `api` directory to install all dependencies for the API.
@@ -29,10 +35,10 @@ DGC_ADDRESS=""
 PORT=
 ```
 
-`INFURA_NETWORK` being the network you wish to access from (rinkeby, mainet, etc).  
-`INFURA_API_KEY` being your API key from Infura.  
-`DGC_ADDRESS` being the address of the contract.  
-`PORT` being the port you wihs the API to open on.
+`INFURA_NETWORK` being the network you wish to access from (rinkeby, mainet, etc).
+`INFURA_API_KEY` being your API key from Infura.
+`DGC_ADDRESS` being the address of the contract.
+`PORT` being the port you want the API to open on.
 
 ## Assets
 
@@ -41,6 +47,7 @@ All assets are stored in the `assets` directory. This contains all art and `.jso
 ## Source Files
 
 All SOurce files are within the `src` directory. `src` contains the files responsible for the generation, drawing and utils of the API.
+-->
 
 # Ideas and Thoughts for the Project
 
@@ -73,6 +80,7 @@ All SOurce files are within the `src` directory. `src` contains the files respon
 - Characters are saved and written to
   characters.json for later use.
 
+<!--
 ## Elemental Table (Maybe?)
 
 - Fire > Earth
@@ -116,3 +124,4 @@ North East Isle: Zenethia or Xanethia
 ### Lower Isle:
 
 South Isle: Zarkus
+-->

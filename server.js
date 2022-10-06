@@ -10,12 +10,6 @@ registerFont(__dirname + "/assets/Press_Start_2P/PressStart2P-Regular.ttf", {
   family: "Press Start 2P",
 });
 
-// SSL Enable
-// const options = {
-//   key: fs.readFileSync("./security/RPG-Character-Generator-API"),
-//   cert: fs.readFileSync(KEY_PATH),
-// };
-
 // Code File Imports
 const generator = require("./src/generate");
 const metadata = require("./src/metadata");
@@ -28,40 +22,40 @@ const app = express();
 const port = process.env.PORT || 3030;
 
 // Initialise web3
-const web3 = new Web3(
-  new Web3.providers.HttpProvider(
-    `https://${process.env.INFURA_NETWORK}.infura.io/v3/${process.env.INFURA_API_KEY}`
-  )
-);
+// const web3 = new Web3(
+//   new Web3.providers.HttpProvider(
+//     `https://${process.env.INFURA_NETWORK}.infura.io/v3/${process.env.INFURA_API_KEY}`
+//   )
+// );
 
 // Contract
-const DGC = new web3.eth.Contract(abi, process.env.DGC_ADDRESS);
+// const DGC = new web3.eth.Contract(abi, process.env.DGC_ADDRESS);
 
 // Get DGC
-const getDGC = (id, cb) => {
-  DGC.methods
-    .getDGC(id)
-    .call()
-    .then((info) => {
-      if (cb) {
-        cb({
-          owner: info.tokenOwner,
-          seed: info.seed.slice(-64),
-          name:
-            info.tokenName.length > 0
-              ? `#${id} ` + info.tokenName
-              : `DGC #${id}`,
-        });
-      }
-    })
-    .catch(() => {
-      if (cb) {
-        cb({
-          error: true,
-        });
-      }
-    });
-};
+// const getDGC = (id, cb) => {
+//   DGC.methods
+//     .getDGC(id)
+//     .call()
+//     .then((info) => {
+//       if (cb) {
+//         cb({
+//           owner: info.tokenOwner,
+//           seed: info.seed.slice(-64),
+//           name:
+//             info.tokenName.length > 0
+//               ? `#${id} ` + info.tokenName
+//               : `DGC #${id}`,
+//         });
+//       }
+//     })
+//     .catch(() => {
+//       if (cb) {
+//         cb({
+//           error: true,
+//         });
+//       }
+//     });
+// };
 
 // CORs Headers
 app.use(function (req, res, next) {
