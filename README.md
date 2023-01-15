@@ -4,19 +4,19 @@
 
 In order to change the seed for the characters, change the 0 in the URL address this is the seed value that is used in the API.
 
-- [Pre-generated Characters Card](https://character-generation-api.herokuapp.com/special/0/1x.png)
-- [Pre-generated Characters Metadata](https://character-generation-api.herokuapp.com/special/0/metadata)
+- [Pre-generated Characters Card](https://character-gen-api.onrender.com/special/0/1x.png)
+- [Pre-generated Characters Metadata](https://character-gen-api.onrender.com/special/0/metadata)
 
-- [Seeded Characters Card](https://character-generation-api.herokuapp.com/seed/0/1x.png)
-- [Seeded Characters Metadata](https://character-generation-api.herokuapp.com/seed/0/metadata)
+- [Seeded Characters Card](https://character-gen-api.onrender.com/seed/0/1x.png)
+- [Seeded Characters Metadata](https://character-gen-api.onrender.com/seed/0/metadata)
 
 <!-- - [Pre-generated Characters Sprite](https://character-generation-api.herokuapp.com/sprite/0/1x.png) -->
 
-- [Seeded Characters Sprite](https://character-generation-api.herokuapp.com/sprite/seed/0/10x.png)
+- [Seeded Characters Sprite](https://character-gen-api.onrender.com/sprite/seed/0/10x.png)
 
 <!-- - [Pre-generated Characters Weapon Sprite](https://character-generation-api.herokuapp.com/weapon/0/1x.png) -->
 
-- [Seeded Characters Weapon Sprite](https://character-generation-api.herokuapp.com/weapon/seed/0/10x.png)
+- [Seeded Characters Weapon Sprite](https://character-gen-api.onrender.com/weapon/seed/0/10x.png)
 
 <!--
 ## Setup
