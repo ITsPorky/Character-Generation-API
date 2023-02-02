@@ -15,6 +15,41 @@
 	display: none;
 }
 
+/* From extension ms-toolsai.jupyter */
+/* These classnames are inherited from bootstrap, but are present in most notebook renderers */
+
+.alert {
+    width: auto;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.alert > *:last-child {
+    margin-bottom: 0;
+}
+#preview > .alert:last-child {
+    /* Prevent this being set to zero by the default notebook stylesheet */
+    padding-bottom: 1em;
+}
+
+.alert-success {
+    /* Note there is no suitable color available, so we just copy "info" */
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-info {
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-warning {
+    background-color: var(--theme-warning-background);
+    color: var(--theme-warning-foreground);
+}
+.alert-danger {
+    background-color: var(--theme-error-background);
+    color: var(--theme-error-foreground);
+}
+
 </style>
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
@@ -63,18 +98,20 @@
 <p><a href="https://character-gen-api.onrender.com/weapon/seed/0/10x.png">Seeded Characters Weapon Sprite</a></p>
 </li>
 </ul>
-<h2 id="response-types">Response Types</h2>
+<h1 id="response-types">Response Types</h1>
 <p>This API has multiple responses a user can request, these include:</p>
-<h4 id="character-card-format-png">Character Card (format: <code>.png</code>)</h4>
+<hr>
+<h2 id="character-card-format-png">Character Card (format: <code>.png</code>)</h2>
 <p>This response type can be retrieved by using the URL <code>/seed/0/1x.png</code>.</p>
 <ul>
 <li>The URL is made up of information. <code>/seed</code> tells the API to generate the character for a given seed value.</li>
 <li>The next part of the URL <code>/0</code> is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the character. When given the same seed the API will generate the same character with all the same information.</li>
 <li>The final part of the URL determines the size of the image to be returned. <code>/1x.png</code> will return the default size of the Character Card, <code>/2x.png</code> will return a Character Card twice the size of the defualt image, and so on (Size limit is <code>5x.png</code> as the image is too large and causes too much stress on the API server).</li>
 </ul>
-<p>Example response:
+<p>Example response:<br>
 <img src="https://character-gen-api.onrender.com/seed/0/1x.png" alt="Seeded Characters Card"></p>
-<h4 id="character-sprite-format-png">Character Sprite (format: <code>.png</code>)</h4>
+<hr>
+<h2 id="character-sprite-format-png">Character Sprite (format: <code>.png</code>)</h2>
 <p>This response type can be retrieved by using the URL <code>/sprite/seed/0/1x.png</code>.</p>
 <ul>
 <li>The URL is made up of information. <code>/sprite</code> tells the API to generate the character sprite only for a given seed value.</li>
@@ -82,9 +119,10 @@
 <li>The next part of the URL <code>/0</code> is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the character. When given the same seed the API will generate the same character with all the same information.</li>
 <li>The final part of the URL determines the size of the image to be returned. <code>/1x.png</code> will return the default size of the Character Sprite, <code>/2x.png</code> will return a Character Sprite twice the size of the defualt image, and so on (Size limit is <code>10x.png</code>).</li>
 </ul>
-<p>Example response:
+<p>Example response:<br>
 <img src="https://character-gen-api.onrender.com/sprite/seed/0/10x.png" alt="Seeded Character Sprite"></p>
-<h4 id="weapon-sprite-format-png">Weapon Sprite (format: <code>.png</code>)</h4>
+<hr>
+<h2 id="weapon-sprite-format-png">Weapon Sprite (format: <code>.png</code>)</h2>
 <p>This response type can be retrieved by using the URL <code>/weapon/seed/0/1x.png</code>.</p>
 <ul>
 <li>The URL is made up of information. <code>/weapon</code> tells the API to generate the character sprite only for a given seed value.</li>
@@ -92,15 +130,17 @@
 <li>The next part of the URL <code>/0</code> is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the weapon. When given the same seed the API will generate the same weapon with all the same information.</li>
 <li>The final part of the URL determines the size of the image to be returned. <code>/1x.png</code> will return the default size of the Weapon Sprite, <code>/2x.png</code> will return a Weapon Sprite twice the size of the defualt image, and so on (Size limit is <code>10x.png</code>).</li>
 </ul>
-<p>Example response:
+<p>Example response:<br>
 <img src="https://character-gen-api.onrender.com/weapon/seed/0/10x.png" alt="Seeded Weapon Sprite"></p>
-<h4 id="character-metadata-format-json">Character Metadata (format: <code>JSON</code>)</h4>
+<hr>
+<h2 id="character-metadata-format-json">Character Metadata (format: <code>JSON</code>)</h2>
 <p>This response type can be retrieved by using the URL <code>/seed/0/metadata</code>.</p>
 <ul>
 <li>The URL is made up of information. <code>/seed</code> tells the API to generate the character for a given seed value.</li>
 <li>The next part of the URL <code>/0</code> is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the character. When given the same seed the API will generate the same character with all the same information.</li>
 <li>The final part of the URL tells the API to return the metadata for the Character. This includes all the information that is generated for the character, including the character card URL, character sprite URL, weapon sprite URL, and extra information that is not displayed in the character card.</li>
 </ul>
+<hr>
 <h2 id="completed-features">Completed Features:</h2>
 <ul>
 <li>Random Character Stats.</li>
