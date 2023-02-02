@@ -1,6 +1,6 @@
-# API Instructions
+# API Documentation
 
-## Useful links
+## Quick links to Test
 
 In order to change the seed for the characters, change the 0 in the URL address this is the seed value that is used in the API.
 
@@ -10,50 +10,56 @@ In order to change the seed for the characters, change the 0 in the URL address 
 - [Seeded Characters Card](https://character-gen-api.onrender.com/seed/0/1x.png)
 - [Seeded Characters Metadata](https://character-gen-api.onrender.com/seed/0/metadata)
 
-<!-- - [Pre-generated Characters Sprite](https://character-generation-api.herokuapp.com/sprite/0/1x.png) -->
-
 - [Seeded Characters Sprite](https://character-gen-api.onrender.com/sprite/seed/0/10x.png)
-
-<!-- - [Pre-generated Characters Weapon Sprite](https://character-generation-api.herokuapp.com/weapon/0/1x.png) -->
 
 - [Seeded Characters Weapon Sprite](https://character-gen-api.onrender.com/weapon/seed/0/10x.png)
 
-<!--
-## Setup
+## Response Types
 
-Run `npm init` inside the `api` directory to install all dependencies for the API.
+This API has multiple responses a user can request, these include:
 
-In Order for this to work. You must create an environment file `.env` and
-assign values to These variables inside there:
+#### Character Card (format: `.png`)
 
-```
-INFURA_NETWORK=""
-INFURA_API_KEY=""
-DGC_ADDRESS=""
-PORT=
-```
+This response type can be retrieved by using the URL `/seed/0/1x.png`.
 
-`INFURA_NETWORK` being the network you wish to access from (rinkeby, mainet, etc).
-`INFURA_API_KEY` being your API key from Infura.
-`DGC_ADDRESS` being the address of the contract.
-`PORT` being the port you want the API to open on.
+- The URL is made up of information. `/seed` tells the API to generate the character for a given seed value.
+- The next part of the URL `/0` is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the character. When given the same seed the API will generate the same character with all the same information.
+- The final part of the URL determines the size of the image to be returned. `/1x.png` will return the default size of the Character Card, `/2x.png` will return a Character Card twice the size of the defualt image, and so on (Size limit is `5x.png` as the image is too large and causes too much stress on the API server).
 
-## Assets
+Example response:
+![Seeded Characters Card](https://character-gen-api.onrender.com/seed/0/1x.png)
 
-All assets are stored in the `assets` directory. This contains all art and `.json` files containing information about the assets.
+#### Character Sprite (format: `.png`)
 
-## Source Files
+This response type can be retrieved by using the URL `/sprite/seed/0/1x.png`.
 
-All SOurce files are within the `src` directory. `src` contains the files responsible for the generation, drawing and utils of the API.
--->
+- The URL is made up of information. `/sprite` tells the API to generate the character sprite only for a given seed value.
+- The `/seed` part tells the API to generate the character form a given seed value.
+- The next part of the URL `/0` is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the character. When given the same seed the API will generate the same character with all the same information.
+- The final part of the URL determines the size of the image to be returned. `/1x.png` will return the default size of the Character Sprite, `/2x.png` will return a Character Sprite twice the size of the defualt image, and so on (Size limit is `10x.png`).
 
-# Ideas and Thoughts for the Project
+Example response:
+![Seeded Character Sprite](https://character-gen-api.onrender.com/sprite/seed/0/10x.png)
 
-## To Do List/ Features to implement:
+#### Weapon Sprite (format: `.png`)
 
-- Finish all assets for characters.
-- Assign a random general abilities for each character.
-- Assign a random ability to each weapon.
+This response type can be retrieved by using the URL `/weapon/seed/0/1x.png`.
+
+- The URL is made up of information. `/weapon` tells the API to generate the character sprite only for a given seed value.
+- The `/seed` part tells the API to generate the character form a given seed value.
+- The next part of the URL `/0` is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the weapon. When given the same seed the API will generate the same weapon with all the same information.
+- The final part of the URL determines the size of the image to be returned. `/1x.png` will return the default size of the Weapon Sprite, `/2x.png` will return a Weapon Sprite twice the size of the defualt image, and so on (Size limit is `10x.png`).
+
+Example response:
+![Seeded Weapon Sprite](https://character-gen-api.onrender.com/weapon/seed/0/10x.png)
+
+#### Character Metadata (format: `JSON`)
+
+This response type can be retrieved by using the URL `/seed/0/metadata`.
+
+- The URL is made up of information. `/seed` tells the API to generate the character for a given seed value.
+- The next part of the URL `/0` is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the character. When given the same seed the API will generate the same character with all the same information.
+- The final part of the URL tells the API to return the metadata for the Character. This includes all the information that is generated for the character, including the character card URL, character sprite URL, weapon sprite URL, and extra information that is not displayed in the character card.
 
 ## Completed Features:
 
@@ -77,49 +83,3 @@ All SOurce files are within the `src` directory. `src` contains the files respon
   all random content.
 - Characters are saved and written to
   characters.json for later use.
-
-<!--
-## Elemental Table (Maybe?)
-
-- Fire > Earth
-- Fire < Water
-- Fire
-
-## Game Idea
-
-- Randomly genegated tilsets placed together with random
-  enemy placements and loot chest placed at the end.
-
-- Community hub area
-
-# Character Lore / The Land of Zenethia Lore
-
-A RPG based Character generator with stats, general information, weapons, abilities and with a 32x32 pixel sprite portrait.
-
-## Lore
-
-### Pre-Pre Lore
-
-Before the War:
-
-### Pre Lore
-
-The War:
-
-### Current Lore
-
-After the War:
-
-## Lands
-
-There are 3 main Isles, consisting of 2 Upper Isles and the Lower Isle.
-
-### Upper Isles:
-
-North West Isle: Zenaria or Xanaria
-North East Isle: Zenethia or Xanethia
-
-### Lower Isle:
-
-South Isle: Zarkus
--->
