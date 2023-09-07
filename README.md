@@ -1,85 +1,82 @@
-# API Documentation
+# Character Generator API Documentation
 
-## Quick links to Test
+Welcome to the Character Generator API documentation. This API allows you to dynamically generate unique characters, their metadata, and associated images. Below, we provide a comprehensive guide on how to use this API effectively.
 
-In order to change the seed for the characters, change the 0 in the URL address this is the seed value that is used in the API.
+## Quick Links for Testing
 
-- [Pre-generated Characters Card](https://character-gen-api.onrender.com/special/0/1x.png)
-- [Pre-generated Characters Metadata](https://character-gen-api.onrender.com/special/0/metadata)
+To generate characters, you can adjust the seed value in the URL. The seed value determines the character's properties, and using the same seed will produce the same character. Here are some quick links for testing:
 
-- [Seeded Characters Card](https://character-gen-api.onrender.com/seed/0/1x.png)
-- [Seeded Characters Metadata](https://character-gen-api.onrender.com/seed/0/metadata)
+- **Pre-generated Characters Card**: [Generate Character Card](https://character-gen-api.onrender.com/special/0/1x.png)
+- **Pre-generated Characters Metadata**: [Generate Character Metadata](https://character-gen-api.onrender.com/special/0/metadata)
+- **Seeded Characters Card**: [Generate Seeded Character Card](https://character-gen-api.onrender.com/seed/0/1x.png)
+- **Seeded Characters Metadata**: [Generate Seeded Character Metadata](https://character-gen-api.onrender.com/seed/0/metadata)
+- **Seeded Characters Sprite**: [Generate Seeded Character Sprite](https://character-gen-api.onrender.com/sprite/seed/0/10x.png)
+- **Seeded Characters Weapon Sprite**: [Generate Seeded Character Weapon Sprite](https://character-gen-api.onrender.com/weapon/seed/0/10x.png)
 
-- [Seeded Characters Sprite](https://character-gen-api.onrender.com/sprite/seed/0/10x.png)
+## Understanding Response Types
 
-- [Seeded Characters Weapon Sprite](https://character-gen-api.onrender.com/weapon/seed/0/10x.png)
+This API offers several response types that you can request to create diverse characters:
 
-## Response Types
+### Character Card (format: `.png`)
 
-This API has multiple responses a user can request, these include:
+To obtain a Character Card, use the following URL format: `/seed/{seed_value}/1x.png`.
 
-#### Character Card (format: `.png`)
+- `/seed` instructs the API to generate a character based on a given seed value.
+- `{seed_value}` should be a hexadecimal value (0-9 and a-f) that determines the character's properties.
+- `/1x.png` returns the default-sized Character Card. You can increase the size with `/2x.png` or other options (up to `5x.png`), but note that larger images can strain the API server.
 
-This response type can be retrieved by using the URL `/seed/0/1x.png`.
-
-- The URL is made up of information. `/seed` tells the API to generate the character for a given seed value.
-- The next part of the URL `/0` is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the character. When given the same seed the API will generate the same character with all the same information.
-- The final part of the URL determines the size of the image to be returned. `/1x.png` will return the default size of the Character Card, `/2x.png` will return a Character Card twice the size of the defualt image, and so on (Size limit is `5x.png` as the image is too large and causes too much stress on the API server).
-
-Example response:
+**Example Response**:  
 ![Seeded Characters Card](https://character-gen-api.onrender.com/seed/0/1x.png)
 
-#### Character Sprite (format: `.png`)
+### Character Sprite (format: `.png`)
 
-This response type can be retrieved by using the URL `/sprite/seed/0/1x.png`.
+To retrieve a Character Sprite, use the URL format: `/sprite/seed/{seed_value}/1x.png`.
 
-- The URL is made up of information. `/sprite` tells the API to generate the character sprite only for a given seed value.
-- The `/seed` part tells the API to generate the character form a given seed value.
-- The next part of the URL `/0` is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the character. When given the same seed the API will generate the same character with all the same information.
-- The final part of the URL determines the size of the image to be returned. `/1x.png` will return the default size of the Character Sprite, `/2x.png` will return a Character Sprite twice the size of the defualt image, and so on (Size limit is `10x.png`).
+- `/sprite` indicates the API to generate only the character sprite for a given seed value.
+- `/seed` specifies the seed to be used.
+- `{seed_value}` is the hexadecimal seed value for character generation.
+- `/1x.png` provides the default size of the Character Sprite, but you can adjust it as needed (up to `10x.png`).
 
-Example response:
+**Example Response**:  
 ![Seeded Character Sprite](https://character-gen-api.onrender.com/sprite/seed/0/10x.png)
 
-#### Weapon Sprite (format: `.png`)
+### Weapon Sprite (format: `.png`)
 
-This response type can be retrieved by using the URL `/weapon/seed/0/1x.png`.
+To obtain a Weapon Sprite, use the URL format: `/weapon/seed/{seed_value}/1x.png`.
 
-- The URL is made up of information. `/weapon` tells the API to generate the character sprite only for a given seed value.
-- The `/seed` part tells the API to generate the character form a given seed value.
-- The next part of the URL `/0` is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the weapon. When given the same seed the API will generate the same weapon with all the same information.
-- The final part of the URL determines the size of the image to be returned. `/1x.png` will return the default size of the Weapon Sprite, `/2x.png` will return a Weapon Sprite twice the size of the defualt image, and so on (Size limit is `10x.png`).
+- `/weapon` instructs the API to generate only the weapon sprite for a given seed value.
+- `/seed` specifies the seed to be used.
+- `{seed_value}` is the hexadecimal seed value for weapon generation.
+- `/1x.png` provides the default size of the Weapon Sprite, but you can adjust it as needed (up to `10x.png`).
 
-Example response:
+**Example Response**:  
 ![Seeded Weapon Sprite](https://character-gen-api.onrender.com/weapon/seed/0/10x.png)
 
-#### Character Metadata (format: `JSON`)
+### Character Metadata (format: `JSON`)
 
-This response type can be retrieved by using the URL `/seed/0/metadata`.
+To retrieve Character Metadata, use the URL format: `/seed/{seed_value}/metadata`.
 
-- The URL is made up of information. `/seed` tells the API to generate the character for a given seed value.
-- The next part of the URL `/0` is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the character. When given the same seed the API will generate the same character with all the same information.
-- The final part of the URL tells the API to return the metadata for the Character. This includes all the information that is generated for the character, including the character card URL, character sprite URL, weapon sprite URL, and extra information that is not displayed in the character card.
+- `/seed` instructs the API to generate character data for a given seed value.
+- `{seed_value}` is the hexadecimal seed value for character generation.
 
-## Completed Features:
+This response includes all the information generated for the character, such as character card URL, character sprite URL, weapon sprite URL, and additional information not displayed on the character card.
+
+## Completed Features
+
+This API offers a variety of features for creating unique characters, including:
 
 - Random Character Stats.
 - Random Character General Information.
 - First Names Based on Sex.
 - Random Pixel Weapon Generation.
 - Weapons based on class.
-- Weapon information outlined with bronze,
-  silver, gold, purple, based on rarity.
-- Card is given a rarity trim determined
-  by the characters stats.
+- Weapon information categorized by rarity (bronze, silver, gold, purple).
+- Character card rarity determined by character stats.
 - Random Pixel Character Generation.
 - Random Character Names.
 - Random weapon modifier.
-- Random Armor pieces (Head, Chest, Legs) which gives random armor class (AC).
-- Randomisied Abilities (maybe acility stats random).(Removed)
-- Canvas image can be scaled by adding a scale
-  to the url (/[scale]x.png).
-- JSON file reader for
-  all random content.
-- Characters are saved and written to
-  characters.json for later use.
+- Random Armor pieces (Head, Chest, Legs) with random armor class (AC).
+- JSON file reader for all random content.
+- Character data is saved and stored in characters.json for later use.
+
+We hope this documentation helps you make the most of the Character Generator API. Feel free to explore and create unique characters for your applications or projects!
