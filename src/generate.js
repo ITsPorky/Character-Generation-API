@@ -2,7 +2,6 @@
 // Code File Imports
 const utils = require("./utils");
 const web3 = require("web3");
-
 const draw = require("./draw");
 
 // Asset Imports
@@ -441,5 +440,6 @@ const generateRandomCreature = async (seed) => {
 module.exports = {
   generateRandom,
   generateCharacter,
+  generateRandomCreature,
   specialCharacters,
 };

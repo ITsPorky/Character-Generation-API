@@ -75,6 +75,10 @@ app.get(`/`, (req, res) => {
   res.sendFile(path.join(__dirname, "/README.html"));
 });
 
+// ******************************************** //
+// Version 1 Characters
+// ******************************************** //
+
 // Get Character by ID
 app.get(`/:id([0-9]+)/:scale([0-9]+)x.png`, async (req, res) => {
   const id = parseInt(req.params.id);
@@ -97,7 +101,7 @@ app.get(`/:id([0-9]+)/:scale([0-9]+)x.png`, async (req, res) => {
   }
 });
 
-// Get Token Metadata by ID (OpenSea Metadata)
+// Get Character Metadata by ID (OpenSea Metadata)
 app.get(`/:id([0-9]+)/metadataOS`, (req, res) => {
   const id = parseInt(req.params.id);
   getDGC(id, async (info) => {
@@ -112,7 +116,7 @@ app.get(`/:id([0-9]+)/metadataOS`, (req, res) => {
   });
 });
 
-// Get Token Metadata by ID
+// Get Character Metadata by ID
 app.get(`/:id([0-9]+)/metadata`, (req, res) => {
   const id = parseInt(req.params.id);
   getDGC(id, async (info) => {
