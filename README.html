@@ -16,6 +16,7 @@
       }
     </style>
 
+<<<<<<< HEAD
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css"
@@ -246,3 +247,161 @@
     </p>
   </body>
 </html>
+=======
+/* From extension ms-toolsai.jupyter */
+/* These classnames are inherited from bootstrap, but are present in most notebook renderers */
+
+.alert {
+    width: auto;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.alert > *:last-child {
+    margin-bottom: 0;
+}
+#preview > .alert:last-child {
+    /* Prevent this being set to zero by the default notebook stylesheet */
+    padding-bottom: 1em;
+}
+
+.alert-success {
+    /* Note there is no suitable color available, so we just copy "info" */
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-info {
+    background-color: var(--theme-info-background);
+    color: var(--theme-info-foreground);
+}
+.alert-warning {
+    background-color: var(--theme-warning-background);
+    color: var(--theme-warning-foreground);
+}
+.alert-danger {
+    background-color: var(--theme-error-background);
+    color: var(--theme-error-foreground);
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="api-documentation">API Documentation</h1>
+<h2 id="quick-links-to-test">Quick links to Test</h2>
+<p>In order to change the seed for the characters, change the 0 in the URL address this is the seed value that is used in the API.</p>
+<ul>
+<li>
+<p><a href="https://character-gen-api.onrender.com/special/0/1x.png">Pre-generated Characters Card</a></p>
+</li>
+<li>
+<p><a href="https://character-gen-api.onrender.com/special/0/metadata">Pre-generated Characters Metadata</a></p>
+</li>
+<li>
+<p><a href="https://character-gen-api.onrender.com/seed/0/1x.png">Seeded Characters Card</a></p>
+</li>
+<li>
+<p><a href="https://character-gen-api.onrender.com/seed/0/metadata">Seeded Characters Metadata</a></p>
+</li>
+<li>
+<p><a href="https://character-gen-api.onrender.com/sprite/seed/0/10x.png">Seeded Characters Sprite</a></p>
+</li>
+<li>
+<p><a href="https://character-gen-api.onrender.com/weapon/seed/0/10x.png">Seeded Characters Weapon Sprite</a></p>
+</li>
+</ul>
+<h1 id="response-types">Response Types</h1>
+<p>This API has multiple responses a user can request, these include:</p>
+<hr>
+<h2 id="character-card-format-png">Character Card (format: <code>.png</code>)</h2>
+<p>This response type can be retrieved by using the URL <code>/seed/0/1x.png</code>.</p>
+<ul>
+<li>The URL is made up of information. <code>/seed</code> tells the API to generate the character for a given seed value.</li>
+<li>The next part of the URL <code>/0</code> is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the character. When given the same seed the API will generate the same character with all the same information.</li>
+<li>The final part of the URL determines the size of the image to be returned. <code>/1x.png</code> will return the default size of the Character Card, <code>/2x.png</code> will return a Character Card twice the size of the defualt image, and so on (Size limit is <code>5x.png</code> as the image is too large and causes too much stress on the API server).</li>
+</ul>
+<p>Example response:<br>
+<img src="https://character-gen-api.onrender.com/seed/0/1x.png" alt="Seeded Characters Card"></p>
+<hr>
+<h2 id="character-sprite-format-png">Character Sprite (format: <code>.png</code>)</h2>
+<p>This response type can be retrieved by using the URL <code>/sprite/seed/0/1x.png</code>.</p>
+<ul>
+<li>The URL is made up of information. <code>/sprite</code> tells the API to generate the character sprite only for a given seed value.</li>
+<li>The <code>/seed</code> part tells the API to generate the character form a given seed value.</li>
+<li>The next part of the URL <code>/0</code> is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the character. When given the same seed the API will generate the same character with all the same information.</li>
+<li>The final part of the URL determines the size of the image to be returned. <code>/1x.png</code> will return the default size of the Character Sprite, <code>/2x.png</code> will return a Character Sprite twice the size of the defualt image, and so on (Size limit is <code>10x.png</code>).</li>
+</ul>
+<p>Example response:<br>
+<img src="https://character-gen-api.onrender.com/sprite/seed/0/10x.png" alt="Seeded Character Sprite"></p>
+<hr>
+<h2 id="weapon-sprite-format-png">Weapon Sprite (format: <code>.png</code>)</h2>
+<p>This response type can be retrieved by using the URL <code>/weapon/seed/0/1x.png</code>.</p>
+<ul>
+<li>The URL is made up of information. <code>/weapon</code> tells the API to generate the character sprite only for a given seed value.</li>
+<li>The <code>/seed</code> part tells the API to generate the character form a given seed value.</li>
+<li>The next part of the URL <code>/0</code> is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the weapon. When given the same seed the API will generate the same weapon with all the same information.</li>
+<li>The final part of the URL determines the size of the image to be returned. <code>/1x.png</code> will return the default size of the Weapon Sprite, <code>/2x.png</code> will return a Weapon Sprite twice the size of the defualt image, and so on (Size limit is <code>10x.png</code>).</li>
+</ul>
+<p>Example response:<br>
+<img src="https://character-gen-api.onrender.com/weapon/seed/0/10x.png" alt="Seeded Weapon Sprite"></p>
+<hr>
+<h2 id="character-metadata-format-json">Character Metadata (format: <code>JSON</code>)</h2>
+<p>This response type can be retrieved by using the URL <code>/seed/0/metadata</code>.</p>
+<ul>
+<li>The URL is made up of information. <code>/seed</code> tells the API to generate the character for a given seed value.</li>
+<li>The next part of the URL <code>/0</code> is the seed to be used, this is a hexadecimal value (0-9 and a-f) which will be the seed used to generate the character. When given the same seed the API will generate the same character with all the same information.</li>
+<li>The final part of the URL tells the API to return the metadata for the Character. This includes all the information that is generated for the character, including the character card URL, character sprite URL, weapon sprite URL, and extra information that is not displayed in the character card.</li>
+</ul>
+<p>Example response:<br>
+<code>{&quot;body&quot;:{&quot;src&quot;:&quot;./assets/body/body28.png&quot;,&quot;name&quot;:&quot;Large Pointed Ear&quot;,&quot;race&quot;:&quot;Orc&quot;},&quot;eyes&quot;:{&quot;src&quot;:&quot;./assets/eyes/eye6.png&quot;,&quot;name&quot;:&quot;Purple&quot;,&quot;chance&quot;:100},&quot;hair&quot;:{&quot;src&quot;:&quot;./assets/hair/hair64.png&quot;,&quot;name&quot;:&quot;Long Ponytail&quot;,&quot;armor&quot;:0,&quot;chance&quot;:100},&quot;chest&quot;:{&quot;src&quot;:&quot;./assets/shirts/shirt16.png&quot;,&quot;armor&quot;:2,&quot;name&quot;:&quot;Leather Armor&quot;,&quot;chance&quot;:100},&quot;legs&quot;:{&quot;src&quot;:&quot;./assets/legs/legs14.png&quot;,&quot;armor&quot;:1,&quot;name&quot;:&quot;Grey Pants&quot;,&quot;chance&quot;:100},&quot;facialHair&quot;:{&quot;src&quot;:&quot;./assets/facial-hair/facial-hair1.png&quot;,&quot;name&quot;:&quot;none&quot;,&quot;chance&quot;:100},&quot;weapon&quot;:{&quot;src&quot;:&quot;./assets/weapons/staffs/staff42.png&quot;,&quot;type&quot;:&quot;Staff&quot;,&quot;elemental&quot;:&quot;Earth&quot;,&quot;damage&quot;:&quot;d6&quot;,&quot;modifier&quot;:4,&quot;chance&quot;:100},&quot;hp&quot;:17,&quot;ac&quot;:13,&quot;str&quot;:17,&quot;strModifier&quot;:&quot;+3&quot;,&quot;dex&quot;:18,&quot;dexModifier&quot;:&quot;+4&quot;,&quot;con&quot;:15,&quot;conModifier&quot;:&quot;+2&quot;,&quot;int&quot;:10,&quot;intModifier&quot;:&quot;+0&quot;,&quot;wis&quot;:13,&quot;wisModifier&quot;:&quot;+1&quot;,&quot;cha&quot;:16,&quot;chaModifier&quot;:&quot;+3&quot;,&quot;coins&quot;:542,&quot;name&quot;:&quot;Olwyn Everson&quot;,&quot;sex&quot;:&quot;Female&quot;,&quot;race&quot;:&quot;Orc&quot;,&quot;class&quot;:&quot;Wizard&quot;,&quot;height&quot;:&quot;171cm (5'7\&quot;)&quot;,&quot;background&quot;:{&quot;background&quot;:&quot;Peasant&quot;,&quot;chance&quot;:1000},&quot;description&quot;:&quot;Olwyn Everson is a Orc Wizard, who has 3 sibling(s), and was born in a Tower and rasied by a Temple. Olwyn Everson lives in the upper Isle of Zenaria, where she lives out her days as a Peasant. Growing up she often went hunting and foraging and was taught essential survival skills.&quot;,&quot;image_url&quot;:&quot;data:image/png;base64,iVBORw0KGgoAAAAN&quot;,&quot;sprite_url&quot;:&quot;data:image/png;base64,iVBORw0K&quot;,&quot;weapon_url&quot;:&quot;data:image/png;base64,iVBORw0KG&quot;,&quot;seed&quot;:&quot;0&quot;}</code></p>
+<hr>
+<h2 id="completed-features">Completed Features:</h2>
+<ul>
+<li>Random Character Stats.</li>
+<li>Random Character General Information.</li>
+<li>First Names Based on Sex.</li>
+<li>Random Pixel Weapon Generation.</li>
+<li>Weapons based on class.</li>
+<li>Weapon information outlined with bronze,
+silver, gold, purple, based on rarity.</li>
+<li>Card is given a rarity trim determined
+by the characters stats.</li>
+<li>Random Pixel Character Generation.</li>
+<li>Random Character Names.</li>
+<li>Random weapon modifier.</li>
+<li>Random Armor pieces (Head, Chest, Legs) which gives random armor class (AC).</li>
+<li>Randomisied Abilities (maybe acility stats random).(Removed)</li>
+<li>Canvas image can be scaled by adding a scale
+to the url (/[scale]x.png).</li>
+<li>JSON file reader for
+all random content.</li>
+<li>Characters are saved and written to
+characters.json for later use.</li>
+</ul>
+
+        
+        
+    </body>
+    </html>
+>>>>>>> feb8a04c174f429dbd432d733d93c5b78ece735c
