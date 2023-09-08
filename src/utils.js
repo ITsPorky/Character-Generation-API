@@ -52,11 +52,9 @@ const rand = (lastRand, info) => {
 const getRand = (lastRand, min = 0, max = 1) => {
   // lastRand.v = web3.utils.sha3(lastRand.v).slice(-64);
   lastRand.v = sha3_256(lastRand.v).slice(-64);
-  console.log("Last Rand: " + lastRand.v);
   const rand = new BigNumber(lastRand.v, 16)
     .div(new BigNumber(2 ** 256))
     .toNumber();
-  console.log("rand: " + rand);
   return min + (max - min) * rand;
 };
 
