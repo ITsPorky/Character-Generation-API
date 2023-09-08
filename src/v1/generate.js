@@ -3,7 +3,7 @@
 const utils = require("../utils");
 const web3 = require("web3");
 const { sha3_256 } = require("js-sha3");
-const draw = require("./draw_v2");
+const draw = require("./draw");
 
 // Asset Imports
 const bowsInfo = require("../../assets/v1-art/weapons/bows.json");
