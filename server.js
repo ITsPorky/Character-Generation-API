@@ -85,7 +85,7 @@ app.get(`/v1/special/:id([0-9]+)/metadata`, async (req, res) => {
 
 // Draw Character Card Based on Seed
 app.get(
-  `/v1/seed/:seed([a-fA-F0-9]+)/:scale([0-9]+)x.png`,
+  `/v1/seed/:seed([a-zA-Z0-9]+)/:scale([0-9]+)x.png`,
   async (req, res) => {
     const seed = req.params.seed;
     const scale = req.params.scale;

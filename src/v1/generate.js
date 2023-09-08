@@ -2,6 +2,7 @@
 // Code File Imports
 const utils = require("../utils");
 const web3 = require("web3");
+const { sha3_256 } = require("js-sha3");
 const draw = require("./draw");
 
 // Asset Imports
@@ -28,9 +29,16 @@ const backgroundInfo = require("../../assets/attributes/background.json");
 
 // Generate random character
 const generateRandom = async (seed) => {
+  // Uncomment for web3 based PRNG
+  // let lastRand = {
+  //   v: web3.utils.sha3(`DungeonCards:${seed.toString()}`).slice(-64), // maybe remove .slice(-64)
+  // };
+
+  // Hash the seed with the SHA256 Algorithm (Non web3.js version)
   let lastRand = {
-    v: web3.utils.sha3(`DungeonCards:${seed.toString()}`).slice(-64), // maybe remove .slice(-64)
+    v: sha3_256(seed).slice(-64),
   };
+  console.log("Seed: " + seed);
 
   var con = utils.rollStat(lastRand);
   var sexVal = sex[Math.floor(utils.getRand(lastRand, 0, sex.length))];

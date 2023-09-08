@@ -2,6 +2,7 @@
 const fs = require("fs");
 const web3 = require("web3");
 const BigNumber = require("bignumber.js");
+const { sha3_256 } = require("js-sha3");
 
 // Re-roll stats
 const reroll = (character) => {
@@ -48,12 +49,15 @@ const rand = (lastRand, info) => {
   return i;
 };
 
-const getRand = (lastRand, a = 0, b = 1) => {
-  lastRand.v = web3.utils.sha3(lastRand.v).slice(-64);
+const getRand = (lastRand, min = 0, max = 1) => {
+  // lastRand.v = web3.utils.sha3(lastRand.v).slice(-64);
+  lastRand.v = sha3_256(lastRand.v).slice(-64);
+  console.log("Last Rand: " + lastRand.v);
   const rand = new BigNumber(lastRand.v, 16)
     .div(new BigNumber(2 ** 256))
     .toNumber();
-  return a + (b - a) * rand;
+  console.log("rand: " + rand);
+  return min + (max - min) * rand;
 };
 
 // Roll Stat (3d6 + 2)
