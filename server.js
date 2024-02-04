@@ -1,4 +1,7 @@
+// *********************************** //
 // Node Module Imports
+// *********************************** //
+
 require("dotenv").config();
 const express = require("express");
 const path = require("path");
@@ -9,9 +12,9 @@ registerFont(__dirname + "/assets/Press_Start_2P/PressStart2P-Regular.ttf", {
 });
 
 // Code File Imports
-const generator = require("./src/v1/generate");
+const generator = require("./src/v1/generate-v1");
 const metadata = require("./src/metadata");
-const draw = require("./src/v1/draw");
+const draw = require("./src/v1/draw-v1");
 const characters = require("./src/v1/characters.json");
 
 // API Server Info
@@ -31,7 +34,10 @@ app.use(function (req, res, next) {
 // Link CSS and script files
 app.use("/", express.static(__dirname + "/assets/"));
 
+// *********************************** //
 // Home URL
+// *********************************** //
+
 app.get(`/`, (req, res) => {
   res.sendFile(path.join(__dirname, "/README.html"));
 });
@@ -85,7 +91,7 @@ app.get(`/v1/special/:id([0-9]+)/metadata`, async (req, res) => {
 
 // Draw Character Card Based on Seed
 app.get(
-  `/v1/seed/:seed([a-zA-Z0-9]+)/:scale([0-9]+)x.png`,
+  `/v1/card/seed/:seed([a-zA-Z0-9]+)/:scale([0-9]+)x.png`,
   async (req, res) => {
     const seed = req.params.seed;
     const scale = req.params.scale;
@@ -102,8 +108,27 @@ app.get(
   }
 );
 
+// Draw Full Character Card Based on Seed
+app.get(
+  `/v1/fullcard/seed/:seed([a-zA-Z0-9]+)/:scale([0-9]+)x.png`,
+  async (req, res) => {
+    const seed = req.params.seed;
+    const scale = req.params.scale;
+    if (scale > 0 && scale <= 5) {
+      res.type("png");
+      const stream = await draw.drawCharacterCardFullStream(
+        scale,
+        await generator.generateRandom(seed)
+      );
+      stream.pipe(res);
+    } else {
+      res.status(404).json("Not Found");
+    }
+  }
+);
+
 // Get Character Metadata Based on Seed
-app.get(`/v1/seed/:seed([a-fA-F0-9]+)/metadata`, async (req, res) => {
+app.get(`/v1/seed/:seed([a-zA-Z0-9]+)/metadata`, async (req, res) => {
   const seed = req.params.seed;
   res.header("Content-Type", "application/json");
   res.send(metadata.getMetadata(0, await generator.generateRandom(seed)));
@@ -136,7 +161,7 @@ app.get(
 
 // Draw Character Sprite Based on Seed
 app.get(
-  `/v1/sprite/seed/:seed([a-fA-F0-9]+)/:scale([0-9]+)x.png`,
+  `/v1/sprite/seed/:seed([a-zA-Z0-9]+)/:scale([0-9]+)x.png`,
   async (req, res) => {
     const seed = req.params.seed;
     const scale = req.params.scale;
@@ -180,7 +205,7 @@ app.get(
 
 // Draw Weapon Sprite Based on Seed
 app.get(
-  `/v1/weapon/seed/:seed([a-fA-F0-9]+)/:scale([0-9]+)x.png`,
+  `/v1/weapon/seed/:seed([a-zA-Z0-9]+)/:scale([0-9]+)x.png`,
   async (req, res) => {
     const seed = req.params.seed;
     const scale = req.params.scale;
@@ -203,7 +228,7 @@ app.get(
 
 // Draw Character Card Based on Seed
 app.get(
-  `/v2/seed/:seed([a-fA-F0-9]+)/:scale([0-9]+)x.png`,
+  `/v2/seed/:seed([a-zA-Z0-9]+)/:scale([0-9]+)x.png`,
   async (req, res) => {
     const seed = req.params.seed;
     const scale = req.params.scale;
@@ -221,7 +246,7 @@ app.get(
 );
 
 // Get Character Metadata Based on Seed
-app.get(`/v1/seed/:seed([a-fA-F0-9]+)/metadata`, async (req, res) => {
+app.get(`/v2/seed/:seed([a-zA-Z0-9]+)/metadata`, async (req, res) => {
   const seed = req.params.seed;
   res.header("Content-Type", "application/json");
   res.send(metadata.getMetadata(0, await generator.generateRandom(seed)));
@@ -229,7 +254,7 @@ app.get(`/v1/seed/:seed([a-fA-F0-9]+)/metadata`, async (req, res) => {
 
 // Draw Character Sprite Based on Seed
 app.get(
-  `/v2/sprite/seed/:seed([a-fA-F0-9]+)/:scale([0-9]+)x.png`,
+  `/v2/sprite/seed/:seed([a-zA-Z0-9]+)/:scale([0-9]+)x.png`,
   async (req, res) => {
     const seed = req.params.seed;
     const scale = req.params.scale;
@@ -248,7 +273,7 @@ app.get(
 
 // Draw Weapon Sprite Based on Seed
 app.get(
-  `/v2/weapon/seed/:seed([a-fA-F0-9]+)/:scale([0-9]+)x.png`,
+  `/v2/weapon/seed/:seed([a-zA-Z0-9]+)/:scale([0-9]+)x.png`,
   async (req, res) => {
     const seed = req.params.seed;
     const scale = req.params.scale;

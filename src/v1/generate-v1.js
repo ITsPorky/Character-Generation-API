@@ -1,9 +1,8 @@
 // Node Module Imports
 // Code File Imports
 const utils = require("../utils");
-const web3 = require("web3");
 const { sha3_256 } = require("js-sha3");
-const draw = require("./draw");
+const draw_v1 = require("./draw-v1");
 
 // Asset Imports
 const bowsInfo = require("../../assets/v1-art/weapons/bows.json");
@@ -29,16 +28,10 @@ const backgroundInfo = require("../../assets/attributes/background.json");
 
 // Generate random character
 const generateRandom = async (seed) => {
-  // Uncomment for web3 based PRNG
-  // let lastRand = {
-  //   v: web3.utils.sha3(`DungeonCards:${seed.toString()}`).slice(-64), // maybe remove .slice(-64)
-  // };
-
-  // Hash the seed with the SHA256 Algorithm (Non web3.js version)
+  // Hash the seed with the SHA256 Algorithm
   let lastRand = {
     v: sha3_256(seed).slice(-64),
   };
-  console.log("Seed: " + seed);
 
   var con = utils.rollStat(lastRand);
   var sexVal = sex[Math.floor(utils.getRand(lastRand, 0, sex.length))];
@@ -141,22 +134,32 @@ const generateRandom = async (seed) => {
 
   characterData.description = utils.getBackgroundStory(lastRand, characterData);
 
-  const image_URL = await draw.getTokenURL(1, characterData);
+  const image_URL = await draw_v1.getTokenURL(1, characterData);
   characterData.image_url = image_URL;
 
-  const sprite_URL = await draw.getSpriteURL(1, characterData);
+  const sprite_URL = await draw_v1.getSpriteURL(1, characterData);
   characterData.sprite_url = sprite_URL;
 
-  const weapon_URL = await draw.getWeaponURL(1, characterData);
+  const weapon_URL = await draw_v1.getWeaponURL(1, characterData);
   characterData.weapon_url = weapon_URL;
+
+  console.log(
+    "Seed: " + seed + "\n",
+    "Name: " + characterData.name + "\n",
+    "Sex: " + characterData.sex + "\n",
+    "Race: " + characterData.race + "\n",
+    "Class: " + characterData.class + "\n",
+    "Height: " + characterData.height + "\n"
+  );
 
   return characterData;
 };
 
 // Generate Pre-made Character
 const generateCharacter = async (id) => {
+  // Hash the seed with the SHA256 Algorithm
   let lastRand = {
-    v: web3.utils.sha3(`DungeonCards:${id.toString()}`).slice(-64), // maybe remove .slice(-64)
+    v: sha3_256(seed).slice(-64),
   };
 
   const character = specialCharacters[id];
@@ -222,13 +225,13 @@ const generateCharacter = async (id) => {
 
   characterData.description = utils.getBackgroundStory(lastRand, characterData);
 
-  const image_URL = await draw.getTokenURL(1, characterData);
+  const image_URL = await draw_v1.getTokenURL(1, characterData);
   characterData.image_url = image_URL;
 
-  const sprite_URL = await draw.getSpriteURL(1, characterData);
+  const sprite_URL = await draw_v1.getSpriteURL(1, characterData);
   characterData.sprite_url = sprite_URL;
 
-  const weapon_URL = await draw.getWeaponURL(1, characterData);
+  const weapon_URL = await draw_v1.getWeaponURL(1, characterData);
   characterData.weapon_url = weapon_URL;
 
   return characterData;
@@ -327,8 +330,9 @@ const specialCharacters = [
 
 // Generate random Animal
 const generateRandomCreature = async (seed) => {
+  // Hash the seed with the SHA256 Algorithm
   let lastRand = {
-    v: web3.utils.sha3(`DungeonCards:${seed.toString()}`).slice(-64), // maybe remove .slice(-64)
+    v: sha3_256(seed).slice(-64),
   };
 
   var con = utils.rollStat(lastRand);
@@ -432,13 +436,13 @@ const generateRandomCreature = async (seed) => {
 
   creatureData.description = utils.getBackgroundStory(lastRand, creatureData);
 
-  const image_URL = await draw.getTokenURL(1, creatureData);
+  const image_URL = await draw_v1.getTokenURL(1, creatureData);
   creatureData.image_url = image_URL;
 
-  const sprite_URL = await draw.getSpriteURL(1, creatureData);
+  const sprite_URL = await draw_v1.getSpriteURL(1, creatureData);
   creatureData.sprite_url = sprite_URL;
 
-  const weapon_URL = await draw.getWeaponURL(1, creatureData);
+  const weapon_URL = await draw_v1.getWeaponURL(1, creatureData);
   creatureData.weapon_url = weapon_URL;
 
   return creatureData;

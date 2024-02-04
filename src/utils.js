@@ -1,6 +1,5 @@
 // Node Module Imports
 const fs = require("fs");
-const web3 = require("web3");
 const BigNumber = require("bignumber.js");
 const { sha3_256 } = require("js-sha3");
 
