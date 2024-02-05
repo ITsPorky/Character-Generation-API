@@ -20,13 +20,57 @@ To generate characters, manipulate the seed value in the URL, determining the ch
 
 **Note: Version 2 is currently in progress.**
 
-## Understanding Response Types
+## Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine.
+
+### Prerequisites
+
+- Node.js installed on your machine
+
+### Installing
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/ITsPorky/Character-Generation-API.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd Character-Generation-API
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+    OR
+    ```bash
+    npm i
+    ```
+
+### Running the App
+
+1. Start the development server:
+
+    ```bash
+    npm start
+    ```
+
+2. Open your browser and visit [http://localhost:3000](http://localhost:3000) to view the app.
+
+## Usage
+
+### Understanding Response Types
 
 This API provides various response types for creating diverse characters. It includes different versions for generating distinct styles of character design:
 
-### Version 1
+#### Version 1
 
-#### Character Card (format: `.png`)
+##### Character Card (format: `.png`)
 
 To obtain a Character Card, use the following URL format: `/v1/card/seed/{seed_value}/1x.png`.
 
@@ -39,7 +83,7 @@ To obtain a Character Card, use the following URL format: `/v1/card/seed/{seed_v
 **Example Response**:  
 ![Seeded Characters Card](https://character-gen-api.onrender.com/seed/0/1x.png)
 
-#### Character Sprite (format: `.png`)
+##### Character Sprite (format: `.png`)
 
 To retrieve a Character Sprite, use the URL format: `/v1/sprite/seed/{seed_value}/1x.png`.
 
@@ -52,7 +96,7 @@ To retrieve a Character Sprite, use the URL format: `/v1/sprite/seed/{seed_value
 **Example Response**:  
 ![Seeded Character Sprite](https://character-gen-api.onrender.com/sprite/seed/0/10x.png)
 
-#### Weapon Sprite (format: `.png`)
+##### Weapon Sprite (format: `.png`)
 
 To obtain a Weapon Sprite, use the URL format: `/v1/weapon/seed/{seed_value}/1x.png`.
 
@@ -65,7 +109,7 @@ To obtain a Weapon Sprite, use the URL format: `/v1/weapon/seed/{seed_value}/1x.
 **Example Response**:  
 ![Seeded Weapon Sprite](https://character-gen-api.onrender.com/weapon/seed/0/10x.png)
 
-#### Character Metadata (format: `JSON`)
+##### Character Metadata (format: `JSON`)
 
 To retrieve Character Metadata, use the URL format: `/v1/seed/{seed_value}/metadata`.
 
@@ -76,7 +120,7 @@ To retrieve Character Metadata, use the URL format: `/v1/seed/{seed_value}/metad
 
 This response includes all generated character information, such as character card URL, character sprite URL, weapon sprite URL, and additional data not displayed on the character card.
 
-### Version 2
+#### Version 2
 
 Work in progress...
 
