@@ -120,4 +120,4 @@ In the pursuit of project completion, several challenges were encountered and su
 - **Challenge 2: SHA-256 and Big Numbers**
   - Successfully addressed by investing time in acquiring an understanding of SHA-256 and big number manipulation. Extensive research and practical application were undertaken to ensure their effective utilization in the character generation process.
 
-This documentation is designed to facilitate your seamless utilization of the Character Generator API. Feel free to explore its functionalities and experience the benefits it offers.
+I hope this documentation was helpful, feel free to try it out.
