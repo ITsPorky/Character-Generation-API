@@ -96,4 +96,28 @@ This API provides numerous features for creating unique characters, including:
 - Random weapon modifier (Based on weapon type).
 - Random Clothes/Armor pieces (Head, Chest, Legs) with random armor class (AC contributing to character stats).
 
-I trust that this documentation will assist you in maximizing the potential of the Character Generator API. Feel free to explore and craft unique characters for your applications or projects!
+## Project Overview
+
+This section provides an overview of the key learnings and challenges encountered during the development of this project.
+
+#### Key Learnings
+
+Throughout the course of this project, I acquired valuable skills and knowledge in the following areas:
+
+- Proficiency in performing data exchange through URL API calls.
+- Mastery of setting up routes using node.js and express.js to efficiently handle and deliver requested data.
+- Implementation of data sanitization techniques, leveraging Regular Expressions (RegEx) to ensure the acceptance of only authorized data.
+- Enhanced skills in crafting comprehensive documentation, emphasizing the importance of documenting the project concurrently with its development to capture crucial information.
+- Utilization of SHA-256 and manipulation of big numbers for secure and efficient data handling.
+
+#### Overcoming Challenges
+
+In the pursuit of project completion, several challenges were encountered and successfully addressed:
+
+- **Challenge 1: Node.js and API Routing**
+  - Overcame by dedicating time to learn and research the intricacies of node.js and the establishment of API routes. Reference to existing documentation and other APIs played a pivotal role in achieving proficiency.
+
+- **Challenge 2: SHA-256 and Big Numbers**
+  - Successfully addressed by investing time in acquiring an understanding of SHA-256 and big number manipulation. Extensive research and practical application were undertaken to ensure their effective utilization in the character generation process.
+
+This documentation is designed to facilitate your seamless utilization of the Character Generator API. Feel free to explore its functionalities and experience the benefits it offers.
